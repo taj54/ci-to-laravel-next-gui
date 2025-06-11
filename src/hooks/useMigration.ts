@@ -27,14 +27,14 @@ export function useMigration() {
 
     const handleUploadAndDetect = async () => {
         if (!selectedFile) return;
-        var result = await detect(selectedFile);
+        const result = await detect(selectedFile);
         if (result.success) setStep(2);
     };
 
     const startMigrationHandler = async () => {
         if (!projectName.trim()) return;
 
-        var result = await start({
+        const result = await start({
             uniqueId,
             projectName,
             laravelVersion,

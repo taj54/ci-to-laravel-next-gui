@@ -27,7 +27,7 @@ export function useStartMigration() {
             setStatus('success');
             setReport(result);
             return { success: true };
-        } catch (err: any) {
+        } catch (err: unknown) {
             setStatus('failed');
 
             if (err instanceof MigrationError) {

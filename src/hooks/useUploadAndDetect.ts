@@ -15,9 +15,13 @@ export function useUploadAndDetect() {
       setUniqueId(uniqueId);
       setCiVersion(ciVersion);
       return { success: true };
-    } catch (err: any) {
+    } catch (err: unknown) {
       setCiVersion('unknown');
-      setError(err.message);
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('An unknown error occurred');
+      }
       return { success: false };
     } finally {
       setLoading(false);

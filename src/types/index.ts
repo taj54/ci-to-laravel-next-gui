@@ -35,13 +35,13 @@ export interface MigrationResponse {
   errors?: Record<string, string[]>;
 }
 
-class MigrationError extends Error {
-  report?: MigrationReport;
-  validationErrors?: string;
+// class MigrationError extends Error {
+//   report?: MigrationReport;
+//   validationErrors?: string;
 
-  constructor(message: string, report?: MigrationReport, validationErrors?: string) {
-    super(message);
-    this.report = report;
-    this.validationErrors = validationErrors;
-  }
-}
+//   constructor(message: string, report?: MigrationReport, validationErrors?: string) {
+//     super(message);
+//     this.report = report;
+//     this.validationErrors = validationErrors;
+//   }
+// }
