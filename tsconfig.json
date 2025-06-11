@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "preserve",
+    
     "moduleResolution": "bundler",
     "target": "es6",
     "strict": true,
