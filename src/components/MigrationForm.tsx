@@ -21,7 +21,11 @@ interface Props {
   setProjectName: (name: string) => void;
   setLaravelVersion: (version: string) => void;
   setInstallSail: (val: boolean) => void;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
+  onSubmit: (formData: {
+    projectName: string;
+    laravelVersion: string;
+    installSail: boolean;
+  }) => Promise<void>;
 }
 
 export default function MigrationForm({
@@ -34,6 +38,18 @@ export default function MigrationForm({
   setInstallSail,
   onSubmit,
 }: Props) {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const result = await onSubmit({ projectName, laravelVersion, installSail });
+      console.log('Migration result:', result);
+      // Optional: show success feedback
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Optional: show error feedback to user
+    }
+  };
+
   return (
     <Paper sx={{ p: 4, mb: 4 }}>
       <Typography variant="h5" gutterBottom>
@@ -41,7 +57,7 @@ export default function MigrationForm({
       </Typography>
       <Box
         component="form"
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit}
         sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
       >
         <TextField

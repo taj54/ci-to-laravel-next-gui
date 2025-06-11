@@ -29,6 +29,7 @@ export default function HomePage() {
     resetToStep1,
   } = useMigration();
 
+  
   return (
     <main className="max-w-3xl mx-auto p-4">
       {errorMessage && <ErrorAlert message={errorMessage} />}

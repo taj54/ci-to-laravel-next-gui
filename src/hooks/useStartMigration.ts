@@ -29,7 +29,6 @@ export function useStartMigration() {
             return { success: true };
         } catch (err: any) {
             setStatus('failed');
-            setError('Migration failed. Please review the configuration or check the report.');
 
             if (err instanceof MigrationError) {
                 setError(err.message);

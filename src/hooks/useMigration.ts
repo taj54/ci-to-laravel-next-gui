@@ -6,7 +6,7 @@ export function useMigration() {
     const [step, setStep] = useState(1);
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [projectName, setProjectName] = useState('');
-    const [laravelVersion, setLaravelVersion] = useState('10.x');
+    const [laravelVersion, setLaravelVersion] = useState('8.x');
     const [installSail, setInstallSail] = useState(false);
 
     const {
@@ -27,28 +27,21 @@ export function useMigration() {
 
     const handleUploadAndDetect = async () => {
         if (!selectedFile) return;
-        const result = await detect(selectedFile);
+        var result = await detect(selectedFile);
         if (result.success) setStep(2);
     };
 
     const startMigrationHandler = async () => {
         if (!projectName.trim()) return;
-        console.log('start migration');
-        
-        // const result = await start({
-        //     uniqueId,
-        //     projectName,
-        //     laravelVersion,
-        //     installSail,
-        // });
-        // if (result.success) {
-        //     // Success: optionally reset or advance step
-        //     setStep(1);
-        // } else {
-        //     // Failure: stay on current step and optionally handle errors
-        //     console.warn('Migration failed, staying on step 2');
-        //     // Optionally show error message with toast, alert, etc.
-        // }
+
+        var result = await start({
+            uniqueId,
+            projectName,
+            laravelVersion,
+            installSail,
+        });
+        if (result.success) setStep(1);
+
 
     };
 
@@ -56,7 +49,7 @@ export function useMigration() {
         setStep(1);
         setSelectedFile(null);
         setProjectName('');
-        setLaravelVersion('10.x');
+        setLaravelVersion('8.x');
         setInstallSail(false);
     };
 

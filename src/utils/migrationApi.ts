@@ -76,22 +76,21 @@ interface StartMigrationParams {
 
 // Start migration process
 export async function startMigration(params: StartMigrationParams, timeout = 30000): Promise<MigrationReport> {
-  const { uniqueId, projectName, laravelVersion, installSail, ciProjectZip } = params;
+  const { uniqueId, projectName, laravelVersion, installSail } = params;
 
   const formData = new FormData();
   formData.append('uniqueId', uniqueId);
   formData.append('projectName', projectName);
   formData.append('laravelVersion', laravelVersion);
   formData.append('installSail', installSail ? '1' : '0');
-  if (ciProjectZip) {
-    formData.append('ciProjectZip', ciProjectZip);
-  }
+
 
   const res = await fetchWithTimeout(`${API_BASE_URL}/start`, {
     method: 'POST',
     headers: { Accept: 'application/json' },
     body: formData,
   }, timeout);
+  
 
   let data: MigrationStartResponse;
 
