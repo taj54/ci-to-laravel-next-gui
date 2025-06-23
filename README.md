@@ -1,6 +1,13 @@
-# CI to Laravel Migration Tool
+# CI to Laravel Migration Interface
 
-A web-based tool to help you migrate CodeIgniter projects to Laravel, built with [Next.js](https://nextjs.org), React, and Material UI.
+**Version: v1.0.0**
+
+This project provides a web-based interface to connect with the Outbase Conversion App for migrating CodeIgniter projects to Laravel. It is built with [Next.js](https://nextjs.org), React, and Material UI.
+
+## Overview
+
+- **Not a standalone migration tool.**  
+  This interface connects to the Outbase Conversion App backend, which performs the actual migration logic.
 
 ## Features
 
