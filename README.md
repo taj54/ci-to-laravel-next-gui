@@ -88,8 +88,6 @@ This tool expects a backend API (default: `http://127.0.0.1:8000/api/migration`)
 - Taj (tajulislamj200@gmail.com)
 ## License
 
-MIT
+Released under the MIT License.
 
 ---
-
-© {year} Migration Tools Inc. All rights reserved.
