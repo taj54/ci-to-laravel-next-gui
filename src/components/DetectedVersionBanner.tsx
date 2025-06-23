@@ -25,3 +25,4 @@ export default function DetectedVersionBanner({ ciVersion, onChangeFile }: Props
     </Paper>
   );
 }
+

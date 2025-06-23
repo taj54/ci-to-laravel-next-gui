@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CI to Laravel Migration Tool
+
+A web-based tool to help you migrate CodeIgniter projects to Laravel, built with [Next.js](https://nextjs.org), React, and Material UI.
+
+## Features
+
+- Upload your CodeIgniter project as a `.zip` file.
+- Automatic detection of CodeIgniter version.
+- Configure Laravel project name, version, and Sail installation.
+- Start migration and view detailed logs and results.
+- User-friendly interface with step-by-step workflow.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v18+ recommended)
+- npm, yarn, pnpm, or bun
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/your-username/ci-to-laravel-next-gui.git
+   cd ci-to-laravel-next-gui
+   ```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Start the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
 
-## Deploy on Vercel
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Backend API
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This tool expects a backend API (default: `http://127.0.0.1:8000/api/migration`) for migration logic. See [`src/utils/migrationApi.ts`](src/utils/migrationApi.ts) for API endpoints.
+
+## Project Structure
+
+- [`src/app`](src/app): Next.js app directory (pages, layout, styles)
+- [`src/components`](src/components): React UI components
+- [`src/hooks`](src/hooks): Custom React hooks for migration logic
+- [`src/types`](src/types): TypeScript types and interfaces
+- [`src/utils`](src/utils): Utility functions (API, fetch helpers)
+
+## Customization
+
+- Update API endpoints in [`src/utils/migrationApi.ts`](src/utils/migrationApi.ts) if your backend runs elsewhere.
+- UI is built with Material UI and Tailwind CSS (see [`src/app/globals.css`](src/app/globals.css)).
+
+## Scripts
+
+- `npm run dev` — Start development server
+- `npm run build` — Build for production
+- `npm run start` — Start production server
+- `npm run lint` — Lint code
+
+## Authors
+
+- Taj (tajulislamj200@gmail.com)
+## License
+
+MIT
+
+---
+
+© {year} Migration Tools Inc. All rights reserved.

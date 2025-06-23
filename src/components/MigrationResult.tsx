@@ -56,3 +56,4 @@ export default function MigrationResult({ status, report }: Props) {
     </Paper>
   );
 }
+
