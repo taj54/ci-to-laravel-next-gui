@@ -15,7 +15,7 @@ When reporting, please include:
 *   The potential impact of the vulnerability.
 *   Any suggested mitigations (if you have them).
 
-We will acknowledge your email within [5]() business days and aim to provide a more detailed response within [10]() business days.
+We will acknowledge your email within `5` business days and aim to provide a more detailed response within `10` business days.
 
 ## Responsible Disclosure
 
